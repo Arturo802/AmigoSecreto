@@ -28,6 +28,39 @@ inputAmigo.ariaValu = "";
 actualizarLista();
 
 
+// funcion para actualizar la lista
+function actualizarLista(){
+    const listaAmigos = document.getElementById('listaAmigos');
+}
+
+// Limpiar el contenido actual de la lista
+listaAmigos.innerHTML =""; // Borra cualquier contenido previo dentro del contenedor de la lista
+
+// Recorrer el array con un ciclo for
+for(let i=0;i< amigos.length;i++){
+    const pa = document.createElement('pa');
+    pa.textContent =amigos[i];
+    listaAmigos.appendChild(pa);
+}
+
+}
 
 
+// funcion para sortear un  amigo aleatorio
+function sortearAmigo(){
+    // Valida que haya amigos disponibles
+    if(amigos.length==0){
+        alert('No hay amigos disponibles para sortear');
+        return;
+    }
+
+    //Genera un indice aleatorio
+    const indiceAleatorio = Math.floor(Math.random()* amigos.length);
+
+    //Obtener el nombre sorteado
+    const amigoSorteado = amigos[indiceAleatorio];
+
+    //Mostrar el resultado en el HTML
+    const resultado = document.getElementById('resultado');
+    resultado.innerHTML =`Amigo sorteado: <strong>${amigoSorteado}</strong>`;
 }
